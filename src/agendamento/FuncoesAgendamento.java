@@ -2,36 +2,70 @@ package agendamento;
 
 import java.util.Scanner;
 
+
+
 public class FuncoesAgendamento {
-	static String usuarios[] =  new String[10];
+	static int QUANTIDADE_AGENDAMENTOS=1;
+	static int QUANTIDADE_USUARIOS=2;
+	static String usuarios[] =  {"leo", "gabi"};//new String[QUANTIDADE_USUARIOS];
+	static String senhas[] = {"123","2"}; //new String[QUANTIDADE_USUARIOS];
+	static Scanner leitor = new Scanner(System.in);
+	static String[] horariosAgendados = new String[10];
+
+	
+	
+	public static int getQuantidadeAgendamentos() {
+		return QUANTIDADE_AGENDAMENTOS;
+	}
 	
 	
 
 	public static boolean login(String usuario, String senha) {
-		// TODO Auto-generated method stub
-		return false;
+		for (int i = 0 ; i <usuarios.length;i++) {
+			
+			if (usuarios[i].equalsIgnoreCase(usuario)) {
+		return true;}}
+		
+		
+	}
+	public static void cadastrar(String cadastroUsuario, String cadastroSenha) {
+		
+		for (int i = 0; i<usuarios.length; i++) {
+			if (usuarios[i] == null) {
+				usuarios[i] = cadastroUsuario;
+				senhas[i]= cadastroSenha;
+			}
+			
+		}QUANTIDADE_USUARIOS++;
 	}
 
 		
 
 	public static void exibirMenu() {
-		System.out.println("Digite 1 para ver os horarios disponíveis de agendamento");
-		System.out.println("Digite 2 para agendar um horario para entrega");
-		System.out.println("Digite 3 para exibir a agenda de entregas");
-		System.out.println("Digite 4 para sair do sistema");
+		
 	}
 
-	public static void inserirHorario(String[] horariosDisponiveis, String horarioDigitado) {
+	public static String[] inserirHorario(String horarioDigitado) {
+		
+		for (int i = 0; i<horariosAgendados.length;i++) {
+			
+			horarioDigitado = leitor.next();
+			System.out.println("Informe o horarios disponiveis para agendamento: ");
+			if (horariosAgendados[i]==null) {horariosAgendados[i] = horarioDigitado;
+			 
+			} }
+		QUANTIDADE_AGENDAMENTOS++;
 		
 			
-			System.out.println("Informe o horarios disponiveis para agendamento: ");
+		   
+			return horariosAgendados;
 			
-			horariosDisponiveis[i] = horarioDigitado;
 		
 				
 			}
+	
 
-	public static void agendar(String[] agendamentos, String horarioDesejado, String string) {
+	public static void agendar(String[] agendamentos, String horarioDesejado, String nomeCliente) {
 		
 		
 	}
@@ -47,8 +81,18 @@ public class FuncoesAgendamento {
 	FuncoesAgendamento.agendar(agendamentos, horarioDesejado, String nomeCliente);
 	horarioDesejado = leitor.next();
 	
-	String nomeCliente = leitor.next();
+	nomeCliente = leitor.next();
+
+
+
+	public static String exibirAgenda(String[] agendamentos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 		
 }
+}
 
+	
+	
 
